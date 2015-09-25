@@ -37,9 +37,8 @@ class OwnershipsController < ApplicationController
       current_user.have(@item)
     end
     
-    
-
   end
+  
 
   def destroy
     @item = Item.find(params[:item_id])
