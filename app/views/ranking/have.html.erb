@@ -12,15 +12,15 @@
       <div class="rank">
         <% if num == 1 %>
           <% # 1位は金色表示 %>
-          <h3 style="color: #AA9A00; font-weight: bold">第<%= num %>位</h3>
+          <h3 style="color: #AA9A00; font-weight: bold">第<%= num %>位 (<%= item.have_users.count %>)</h3>
         <% elsif num == 2 %>
           <% # 2位は銀色表示 %>
-          <h3 style="color: #BDC3C4; font-weight: bold">第<%= num %>位</h3>
+          <h3 style="color: #BDC3C4; font-weight: bold">第<%= num %>位 (<%= item.have_users.count %>)</h3>
         <% elsif num == 3 %>
           <% # 3位は銀色表示 %>
-          <h3 style="color: #8C4841; font-weight: bold" >第<%= num %>位</h3>
+          <h3 style="color: #8C4841; font-weight: bold" >第<%= num %>位 (<%= item.have_users.count %>)</h3>
         <% else %>
-          <h3 style="color: #313131; font-weight: bold">第<%= num %>位</h3>
+          <h3 style="color: #313131; font-weight: bold">第<%= num %>位 (<%= item.have_users.count %>)</h3>
         <% end %>
     </div>
     <div class="image-r">
