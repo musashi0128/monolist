@@ -1,0 +1,43 @@
+<% content_for :head do %>
+  <title>Haveランキング</title>
+  <meta name="description" content="HaveされているアイテムのランキングTOP10です。">
+<% end %> 
+
+<div class="container">
+  <div class="container-inner inner-default clearfix">
+    <% num = 0 %>
+    <% @ranking_haves.each do |item| %>
+    <% num += 1 %>
+    <div class="item-box-r">
+      <div class="rank">
+        <% if num == 1 %>
+          <% # 1位は金色表示 %>
+          <h3 style="color: #AA9A00; font-weight: bold">第<%= num %>位</h3>
+        <% elsif num == 2 %>
+          <% # 2位は銀色表示 %>
+          <h3 style="color: #BDC3C4; font-weight: bold">第<%= num %>位</h3>
+        <% elsif num == 3 %>
+          <% # 3位は銀色表示 %>
+          <h3 style="color: #8C4841; font-weight: bold" >第<%= num %>位</h3>
+        <% else %>
+          <h3 style="color: #313131; font-weight: bold">第<%= num %>位</h3>
+        <% end %>
+    </div>
+    <div class="image-r">
+      <div class="img-wrap-r">
+        <% if item.large_image.present? %>
+          <%= link_to image_tag(item.large_image , alt: item.title), item.detail_page_url, target: '_blank' %>
+        <% else %>
+          <%= link_to image_tag("no-image.png" , alt: item.title), item.detail_page_url, target: '_blank' %>
+        <% end %>
+      </div>
+    </div>
+    <div class="detail-r">
+      <p class="title-r">
+        <%= item.title %>
+      </p>
+    </div>
+   </div>
+   <% end %>
+  </div>
+</div>
